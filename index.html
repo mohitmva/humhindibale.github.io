@@ -7,142 +7,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #2c3e50; /* गंभीर लेखक वाला रंग */
-            --secondary-color: #8e44ad; /* साहित्यिक बैंगनी रंग */
-            --bg-body: #f4f7f6;
-        }
-
+        :root { --primary-color: #2c3e50; --secondary-color: #8e44ad; --bg-body: #f4f7f6; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background: var(--bg-body); color: #333; overflow-x: hidden; }
         .hindi-font { font-family: 'Tiro Devanagari Hindi', serif; }
 
-        /* Banner Section */
-        .banner-container {
-            width: 100%;
-            height: 40vh; /* बैनर की ऊंचाई */
-            background-color: #ccc; /* Fallback color */
-            overflow: hidden;
-            position: relative;
-        }
-
-        .banner-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* ताकि इमेज फैले नहीं */
-            filter: brightness(0.9); /* थोड़ा गहरा ताकि टेक्स्ट साफ़ दिखे */
-        }
-
-        .banner-overlay-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            text-align: center;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            width: 90%;
-        }
-
-        .banner-overlay-text h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin-bottom: 5px; }
-
-        /* Profile Card */
+        /* Banner & Profile Styles */
+        .banner-container { width: 100%; height: 40vh; overflow: hidden; position: relative; background: #2c3e50; }
+        .banner-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
         .container { max-width: 800px; margin: -60px auto 50px; padding: 0 20px; position: relative; z-index: 10; }
-
-        .profile-card {
-            background: #ffffff;
-            border-radius: 25px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        /* Profile Image Style */
-        .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid white;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            margin-top: -120px; /* Pulls image up onto the banner area */
-            margin-bottom: 20px;
-            background-color: #eee;
-        }
-
-        .name-title { font-size: 2.5rem; color: var(--primary-color); }
-        .tagline { color: var(--secondary-color); font-weight: 600; margin-bottom: 25px; letter-spacing: 1px; font-size: 0.95rem; text-transform: uppercase; }
-
-        /* Description Style */
-        .about-text {
-            font-size: 1.1rem; line-height: 1.8; color: #444;
-            margin: 30px 0; padding: 25px; border-top: 1px solid #eee; border-bottom: 1px solid #eee;
-            text-align: justify;
-        }
-
-        .contact-info {
-            display: flex; justify-content: center; gap: 25px;
-            flex-wrap: wrap; margin-bottom: 30px; font-weight: 500; color: #666;
-        }
-        .info-item i { color: var(--secondary-color); margin-right: 8px; }
-
-        /* Social Buttons */
-        .social-buttons {
-            display: flex; justify-content: center; gap: 15px;
-            margin-top: 20px;
-        }
-
-        .btn {
-            text-decoration: none; padding: 12px 25px; border-radius: 50px;
-            color: white; font-weight: 600; transition: 0.3s;
-            display: inline-flex; align-items: center; gap: 10px; margin: 10px;
-        }
+        .profile-card { background: #ffffff; border-radius: 25px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); text-align: center; margin-bottom: 30px; }
+        .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid white; box-shadow: 0 8px 20px rgba(0,0,0,0.15); margin-top: -115px; margin-bottom: 20px; }
+        
+        /* Gazal Section Styles */
+        .gazal-card { background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border-left: 5px solid var(--secondary-color); }
+        .gazal-title { color: var(--secondary-color); margin-bottom: 30px; font-size: 1.8rem; border-bottom: 2px dashed #eee; display: inline-block; padding-bottom: 5px; }
+        .gazal-content { font-size: 1.25rem; line-height: 2.2; color: #444; white-space: pre-wrap; }
+        .couplet { margin-bottom: 25px; display: block; }
+        
+        .social-buttons { margin-top: 20px; }
+        .btn { text-decoration: none; padding: 10px 20px; border-radius: 50px; color: white; margin: 5px; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; }
         .btn-insta { background: linear-gradient(45deg, #f09433, #e31683, #bc1888); }
-        .btn-x { background: #000; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-
         .footer { padding: 40px; text-align: center; color: #999; font-size: 0.9rem; }
-
-        @media (max-width: 600px) {
-            .banner-container { height: 30vh; }
-            .profile-img { width: 130px; height: 130px; margin-top: -100px; }
-            .name-title { font-size: 2rem; }
-            .about-text { text-align: center; padding: 15px; }
-        }
     </style>
 </head>
 <body>
 
     <div class="banner-container">
-        <img src="banner.png" alt="हमहिंदीवाले बैनर" class="banner-img">
-        
-        <div class="banner-overlay-text">
-            <h1 class="hindi-font">हमहिंदीवाले</h1>
-            <p>शब्द, संवेदना और साहित्य</p>
-        </div>
+        <img src="banner.png" alt="बैनर" class="banner-img">
     </div>
 
     <div class="container">
         <div class="profile-card">
-            <img src="mohit.jpg" alt="मोहित कुमार 'विनीता'" class="profile-img">
-
+            <img src="mohit.jpg" alt="मोहित कुमार" class="profile-img">
             <h2 class="name-title hindi-font">मोहित कुमार 'विनीता'</h2>
-            <p class="tagline">साहित्यकार | लेखक | कवि</p>
-            
-            <div class="about-text hindi-font">
-                 नमस्ते, मैं <b>मोहित कुमार 'विनीता'</b>, उत्तर प्रदेश के औरैया की मिट्टी से जुड़ा एक साहित्य अनुरागी हूँ। शब्दों से खेलना और कविताओं में भावनाओं को पिरोना ही मेरी साधना है। <b>'हमहिंदीवाले'</b> के माध्यम से मेरा उद्देश्य हिंदी साहित्य की धरोहर को संजोना और उसे डिजिटल युग के पाठकों तक पहुँचाना है। यहाँ आपको मेरी रचनाएँ, साहित्य समीक्षा और भाषा के विविध रंग देखने को मिलेंगे।
-            </div>
-
-            <div class="contact-info">
-                <div class="info-item"><i class="fas fa-map-marker-alt"></i>औरैया, उत्तर प्रदेश</div>
-                <div class="info-item"><i class="fas fa-phone-alt"></i>+91 9410045054</div>
-            </div>
-
-            <h3 class="hindi-font" style="margin-bottom: 15px; color: #555;">संवाद के माध्यम</h3>
+            <p style="color: #888; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">साहित्यकार | लेखक | कवि</p>
             <div class="social-buttons">
                 <a href="https://instagram.com/diverse_human" target="_blank" class="btn btn-insta"><i class="fab fa-instagram"></i> Instagram</a>
-                <a href="https://x.com/diverse_human" target="_blank" class="btn btn-x"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
             </div>
+        </div>
+
+        <div class="gazal-card">
+            <h3 class="hindi-font gazal-title">विशेष रचना: ग़ज़ल</h3>
+            <div class="gazal-content hindi-font">
+                <span class="couplet">तय हुआ था न हम तुम मिलेंगे कभी,<br>ख़ुद से वादा ये हम यूँ निभाते रहे।</span>
+                
+                <span class="couplet">होंठ सी कर खड़े हम रहे सामने,<br>हाल आँखों से सबको सुनाते रहे।</span>
+                
+                <span class="couplet">भीड़ में मुस्कुराकर मिले हम मगर,<br>ज़ख़्म अपनों से अपने छुपाते रहे।</span>
+                
+                <span class="couplet">नाम तेरा कभी जो ज़बाँ पर रहा,<br>हम कहानी नई ही सुनाते रहे।</span>
+                
+                <span class="couplet">चाह कर भी तुम्हें हम भुला न सके,<br>याद बनके हमें तुम सताते रहे।</span>
+                
+                <span class="couplet">रात कटती नहीं थी तुम्हारे बिना,<br>ख़ुद को झूठी तसल्ली दिलाते रहे।</span>
+                
+                <span class="couplet">फ़ासले ख़ुद ही तय हमने मिलकर किए,<br>दिल को अपने मगर हम दुखाते रहे।</span>
+            </div>
+            <p style="margin-top: 30px; font-style: italic; color: #888;">— कलमकार: मोहित कुमार 'विनीता'</p>
         </div>
     </div>
 
@@ -151,5 +73,4 @@
     </div>
 
 </body>
-          </html>
-          
+</html>
