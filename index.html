@@ -3,37 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>मोहित कुमार 'विनीता' | हमहिंदीवाले</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>हम हिंदी वाले | साहित्य का संगम</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-color: #2c3e50; --secondary-color: #8e44ad; --bg-body: #f4f7f6; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background: var(--bg-body); color: #333; }
-        .hindi-font { font-family: 'Tiro Devanagari Hindi', serif; }
+        :root { --accent: #800000; --bg: #fdfaf1; }
+        body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; text-align: center; }
+        header { background: var(--accent); color: white; padding: 60px 20px; border-bottom: 8px solid #5a0000; }
+        .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px 10px; }
+        .card { 
+            background: white; border: 1px solid #ddd; padding: 30px; width: 250px; 
+            border-radius: 12px; text-decoration: none; color: var(--accent);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); background: #fffcf5; }
+        .card h2 { margin: 0; font-size: 1.8rem; }
+        .card p { color: #666; font-size: 1rem; }
+    </style>
+</head>
+<body>
 
-        /* Banner & Profile */
-        .banner-container { width: 100%; height: 35vh; overflow: hidden; position: relative; background: #2c3e50; }
-        .banner-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
-        .container { max-width: 750px; margin: -60px auto 40px; padding: 0 15px; position: relative; z-index: 10; }
-        
-        .profile-card { background: #ffffff; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; margin-bottom: 20px; }
-        .profile-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-top: -100px; margin-bottom: 15px; }
-        
-        .name-title { font-size: 2rem; color: var(--primary-color); margin-bottom: 5px; }
-        .contact-info { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 15px 0; font-size: 0.95rem; color: #666; }
-        .info-item i { color: var(--secondary-color); margin-right: 5px; }
+<header>
+    <h1>हम हिंदी वाले</h1>
+    <p>कवि मोहित कुमार 'विनीता' की साहित्यिक पहल</p>
+</header>
 
-        /* Gazal Section - Only One Copy */
-        .gazal-card { background: #fff; border-radius: 20px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center; border-left: 5px solid var(--secondary-color); }
-        .gazal-title { color: var(--secondary-color); margin-bottom: 20px; font-size: 1.6rem; border-bottom: 2px dashed #eee; padding-bottom: 5px; }
-        .gazal-content { font-size: 1.2rem; line-height: 1.8; color: #444; }
-        .couplet { margin-bottom: 15px; display: block; border-bottom: 1px solid #f9f9f9; padding-bottom: 10px; }
-        .couplet:last-child { border-bottom: none; }
+<div class="nav-container">
+    <a href="kahani.html" class="card">
+        <h2>कहानी खंड</h2>
+        <p>100+ कालजयी एवं नई कहानियाँ</p>
+    </a>
+    <a href="ghazal.html" class="card">
+        <h2>ग़ज़ल संग्रह</h2>
+        <p>समकालीन एवं क्लासिक ग़ज़लें</p>
+    </a>
+    <a href="kavita.html" class="card">
+        <h2>कविता/गीत</h2>
+        <p>छंद, मुक्तक और मधुर गीत</p>
+    </a>
+</div>
 
-        /* Buttons */
-        .social-buttons { margin-top: 15px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        .btn { text-decoration: none; padding: 8px 18px; border-radius: 50px; color: white; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; }
+</body>
+</html>
         .btn-insta { background: linear-gradient(45deg, #f09433, #e31683, #bc1888); }
         .btn-x { background: #000; }
         
