@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
     <style>
         :root { --accent: #800000; --edu-blue: #1a237e; --bg: #fdfaf1; }
-        body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; text-align: center; color: #333; }
+        body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; text-align: center; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
         header { background: var(--accent); color: white; padding: 30px 20px; border-bottom: 5px solid #5a0000; }
         
         .profile-img { 
@@ -25,7 +25,7 @@
 
         .nav-container { 
             display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
-            gap: 15px; padding: 20px; max-width: 1200px; margin: auto; 
+            gap: 15px; padding: 20px; max-width: 1200px; margin: auto; width: 100%; box-sizing: border-box;
         }
 
         .card { 
@@ -34,13 +34,21 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: 0.3s;
         }
         .card:hover { transform: translateY(-5px); background: #fffcf5; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
-        /* प्रतियोगी परीक्षा कार्ड्स का अलग रंग */
         .edu-card { border-top: 4px solid var(--edu-blue); color: var(--edu-blue); }
+
+        footer { background: #222; color: white; padding: 30px 20px; margin-top: auto; }
+        .social-links { margin-top: 15px; }
+        .social-btn { 
+            display: inline-block; padding: 10px 25px; margin: 5px; 
+            border-radius: 30px; text-decoration: none; color: white; font-weight: bold; font-size: 0.9rem; transition: 0.3s;
+        }
+        .insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .x-twitter { background: #000000; border: 1px solid #444; }
+        .social-btn:hover { opacity: 0.8; transform: scale(1.05); }
 
         @media (max-width: 600px) {
             .nav-container { grid-template-columns: repeat(2, 1fr); }
-            .section-title { margin-left: 15px; margin-right: 15px; font-size: 1.2rem; }
+            .section-title { margin-left: 15px; margin-right: 15px; font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -57,7 +65,6 @@
     <a href="upsc-hindi.html" class="card edu-card"><h2>UPSC हिंदी साहित्य</h2><p>वैकल्पिक विषय नोट्स</p></a>
     <a href="ugc-net.html" class="card edu-card"><h2>UGC NET हिंदी</h2><p>पाठ्यक्रम एवं इकाईवार नोट्स</p></a>
     <a href="hindi-vyakaran.html" class="card edu-card"><h2>हिंदी व्याकरण</h2><p>सभी परीक्षाओं हेतु</p></a>
-    <a href="gs-notes.html" class="card edu-card"><h2>GS विशेष</h2><p>Polity, Economy आदि</p></a>
 </div>
 
 <div class="section-title">✍️ साहित्यिक वीथिका</div>
@@ -74,7 +81,17 @@
     <a href="atmakatha.html" class="card"><h2>आत्मकथा</h2></a>
     <a href="jeevani.html" class="card"><h2>जीवनी</h2></a>
     <a href="yatra.html" class="card"><h2>यात्रा-वृत्तांत</h2></a>
+    <a href="reportage.html" class="card"><h2>रिपोर्ताज</h2></a>
+    <a href="patra.html" class="card"><h2>पत्र-साहित्य</h2></a>
 </div>
+
+<footer>
+    <p>© 2026 हम हिंदी वाले | छात्र मोहित कुमार 'विनीता'</p>
+    <div class="social-links">
+        <a href="https://instagram.com/diverse_human" target="_blank" class="social-btn insta">Instagram</a>
+        <a href="https://x.com/diverse_human" target="_blank" class="social-btn x-twitter">X (Twitter)</a>
+    </div>
+</footer>
 
 </body>
 </html>
