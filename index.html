@@ -3,43 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>हम हिंदी वाले | साहित्य का संगम</title>
+    <title>हम हिंदी वाले | साहित्य एवं शिक्षा</title>
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #800000; --bg: #fdfaf1; }
-        body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; text-align: center; }
-        header { background: var(--accent); color: white; padding: 60px 20px; border-bottom: 8px solid #5a0000; }
-        .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px 10px; }
-        .card { 
-            background: white; border: 1px solid #ddd; padding: 30px; width: 250px; 
-            border-radius: 12px; text-decoration: none; color: var(--accent);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s;
+        :root { --accent: #800000; --edu-blue: #1a237e; --bg: #fdfaf1; }
+        body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; text-align: center; color: #333; }
+        header { background: var(--accent); color: white; padding: 30px 20px; border-bottom: 5px solid #5a0000; }
+        
+        .profile-img { 
+            width: 120px; height: 120px; border-radius: 50%; 
+            border: 3px solid white; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            object-fit: cover;
         }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); background: #fffcf5; }
-        .card h2 { margin: 0; font-size: 1.8rem; }
-        .card p { color: #666; font-size: 1rem; }
+
+        .section-title { 
+            background: #eee; padding: 10px; margin-top: 30px; 
+            color: var(--accent); border-left: 10px solid var(--accent);
+            text-align: left; max-width: 1160px; margin-left: auto; margin-right: auto;
+            font-size: 1.5rem; border-radius: 0 5px 5px 0;
+        }
+
+        .nav-container { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+            gap: 15px; padding: 20px; max-width: 1200px; margin: auto; 
+        }
+
+        .card { 
+            background: white; border: 1px solid #ddd; padding: 15px; 
+            border-radius: 8px; text-decoration: none; color: var(--accent);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); background: #fffcf5; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        /* प्रतियोगी परीक्षा कार्ड्स का अलग रंग */
+        .edu-card { border-top: 4px solid var(--edu-blue); color: var(--edu-blue); }
+
+        @media (max-width: 600px) {
+            .nav-container { grid-template-columns: repeat(2, 1fr); }
+            .section-title { margin-left: 15px; margin-right: 15px; font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>हम हिंदी वाले</h1>
-    <p>कवि मोहित कुमार 'विनीता' की साहित्यिक पहल</p>
+    <p>छात्र मोहित कुमार 'विनीता' की साहित्यिक एवं शैक्षणिक पहल</p>
+    <img src="mohit.jpg" alt="Mohit Kumar Vinita" class="profile-img">
 </header>
 
+<div class="section-title">📚 प्रतियोगी परीक्षा केंद्र (UPSC / UGC NET)</div>
 <div class="nav-container">
-    <a href="kahani.html" class="card">
-        <h2>कहानी खंड</h2>
-        <p>100+ कालजयी एवं नई कहानियाँ</p>
-    </a>
-    <a href="ghazal.html" class="card">
-        <h2>ग़ज़ल संग्रह</h2>
-        <p>समकालीन एवं क्लासिक ग़ज़लें</p>
-    </a>
-    <a href="kavita.html" class="card">
-        <h2>कविता/गीत</h2>
-        <p>छंद, मुक्तक और मधुर गीत</p>
-    </a>
+    <a href="upsc-hindi.html" class="card edu-card"><h2>UPSC हिंदी साहित्य</h2><p>वैकल्पिक विषय नोट्स</p></a>
+    <a href="ugc-net.html" class="card edu-card"><h2>UGC NET हिंदी</h2><p>पाठ्यक्रम एवं इकाईवार नोट्स</p></a>
+    <a href="hindi-vyakaran.html" class="card edu-card"><h2>हिंदी व्याकरण</h2><p>सभी परीक्षाओं हेतु</p></a>
+    <a href="gs-notes.html" class="card edu-card"><h2>GS विशेष</h2><p>Polity, Economy आदि</p></a>
+</div>
+
+<div class="section-title">✍️ साहित्यिक वीथिका</div>
+<div class="nav-container">
+    <a href="kahani.html" class="card"><h2>कहानी</h2></a>
+    <a href="upanyas.html" class="card"><h2>उपन्यास</h2></a>
+    <a href="natak.html" class="card"><h2>नाटक</h2></a>
+    <a href="nibandh.html" class="card"><h2>निबंध</h2></a>
+    <a href="alochana.html" class="card"><h2>आलोचना</h2></a>
+    <a href="ghazal.html" class="card"><h2>ग़ज़ल</h2></a>
+    <a href="kavita.html" class="card"><h2>कविता/गीत</h2></a>
+    <a href="sansmaran.html" class="card"><h2>संस्मरण</h2></a>
+    <a href="rekhachitra.html" class="card"><h2>रेखाचित्र</h2></a>
+    <a href="atmakatha.html" class="card"><h2>आत्मकथा</h2></a>
+    <a href="jeevani.html" class="card"><h2>जीवनी</h2></a>
+    <a href="yatra.html" class="card"><h2>यात्रा-वृत्तांत</h2></a>
 </div>
 
 </body>
