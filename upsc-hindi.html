@@ -8,82 +8,139 @@
     <style>
         :root { --accent: #800000; --bg: #fdfaf1; --blue: #1a237e; }
         body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; padding: 15px; line-height: 1.6; }
-        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .container { max-width: 950px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         
         h1 { color: var(--accent); text-align: center; border-bottom: 3px double var(--accent); padding-bottom: 10px; margin-bottom: 30px; }
-        .paper-header { background: var(--blue); color: white; padding: 12px; border-radius: 5px; font-size: 1.6rem; margin: 25px 0 15px; text-align: center; }
+        .paper-header { background: var(--blue); color: white; padding: 12px; border-radius: 5px; font-size: 1.6rem; margin: 30px 0 15px; text-align: center; font-weight: bold; }
         
         /* खंड स्टाइल */
         .section-header { 
-            background: #eee; padding: 10px 15px; margin: 15px 0 5px; 
-            border-left: 6px solid var(--accent); font-weight: bold; font-size: 1.3rem;
-            cursor: pointer; display: flex; justify-content: space-between;
+            background: #eee; padding: 12px 15px; margin: 20px 0 10px; 
+            border-left: 6px solid var(--accent); font-weight: bold; font-size: 1.3rem; color: #333;
         }
 
         /* यूनिट और टॉपिक्स */
-        .unit-box { border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; background: #fffcf5; }
+        .unit-box { border: 1px solid #ddd; border-radius: 5px; margin-bottom: 15px; background: #fffcf5; }
         .unit-link { 
-            display: block; padding: 12px 15px; text-decoration: none; 
-            color: #333; transition: 0.3s; border-bottom: 1px solid #eee;
+            display: block; padding: 15px; text-decoration: none; 
+            color: #333; border-bottom: 1px solid #ddd; transition: 0.3s;
+            line-height: 1.5; font-size: 1.1rem;
         }
         .unit-link:last-child { border-bottom: none; }
         .unit-link:hover { background: #fdf5e6; color: var(--accent); padding-left: 20px; }
-        .unit-link span { color: var(--accent); font-weight: bold; margin-right: 10px; }
+        .unit-link strong { color: var(--accent); font-size: 1.15rem; }
+        .unit-subtext { display: block; margin-top: 5px; color: #555; font-size: 1rem; }
 
-        .back-home { display: block; text-align: center; margin-top: 40px; color: var(--accent); text-decoration: none; font-weight: bold; }
+        .back-home { display: block; text-align: center; margin-top: 40px; color: var(--accent); text-decoration: none; font-weight: bold; font-size: 1.2rem; }
         
         @media (max-width: 600px) {
             .container { padding: 15px; }
-            h1 { font-size: 1.6rem; }
-            .paper-header { font-size: 1.2rem; }
+            h1 { font-size: 1.5rem; }
+            .paper-header { font-size: 1.3rem; }
+            .unit-link { font-size: 1rem; }
+            .unit-subtext { font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>UPSC हिंदी साहित्य (वैकल्पिक विषय)</h1>
+    <h1>UPSC हिंदी साहित्य (वैकल्पिक विषय) पाठ्यक्रम</h1>
 
-    <div class="paper-header">प्रश्नपत्र-1 (हिन्दी भाषा और साहित्य का इतिहास)</div>
+    <div class="paper-header">प्रश्नपत्र-1</div>
     
-    <div class="section-header">खंड : ‘क’ (हिन्दी भाषा और नागरी लिपि)</div>
+    <div class="section-header">खंड : ‘क’ (हिन्दी भाषा और नागरी लिपि का इतिहास)</div>
     <div class="unit-box">
-        <a href="upsc/p1-k-1.html" class="unit-link"><span>1.</span> अपभ्रंश, अवहट्ट और प्रारंभिक हिन्दी</a>
-        <a href="upsc/p1-k-2.html" class="unit-link"><span>2.</span> ब्रज और अवधी का साहित्यिक विकास</a>
-        <a href="upsc/p1-k-3.html" class="unit-link"><span>3.</span> खड़ी बोली का प्रारंभिक स्वरूप (खुसरो, दक्खिनी)</a>
-        <a href="upsc/p1-k-4.html" class="unit-link"><span>4.</span> 19वीं शताब्दी में खड़ी बोली और नागरी लिपि</a>
-        <a href="upsc/p1-k-5.html" class="unit-link"><span>5.</span> हिन्दी भाषा और नागरी लिपि का मानकीकरण</a>
-        <a href="upsc/p1-k-6.html" class="unit-link"><span>6.</span> राष्ट्र भाषा और राजभाषा के रूप में विकास</a>
-        <a href="upsc/p1-k-7.html" class="unit-link"><span>7.</span> हिन्दी की प्रमुख बोलियाँ और व्याकरणिक संरचना</a>
+        <a href="upsc/p1-k-1.html" class="unit-link"><strong>i.</strong> अपभ्रंश, अवहट्ट और प्रारंभिक हिन्दी का व्याकरणिक तथा अनुप्रयुक्त स्वरूप।</a>
+        <a href="upsc/p1-k-2.html" class="unit-link"><strong>ii.</strong> मध्यकाल में ब्रज और अवधी का साहित्यिक भाषा के रूप में विकास।</a>
+        <a href="upsc/p1-k-3.html" class="unit-link"><strong>iii.</strong> सिद्ध एवं नाथ साहित्य, खुसरो, संत साहित्य, रहीम आदि कवियों और दक्खिनी हिन्दी में खड़ी बोली का प्रारंभिक स्वरूप।</a>
+        <a href="upsc/p1-k-4.html" class="unit-link"><strong>iv.</strong> उन्नीसवीं शताब्दी में खड़ी बोली और नागरी लिपि का विकास।</a>
+        <a href="upsc/p1-k-5.html" class="unit-link"><strong>v.</strong> हिन्दी भाषा और नागरी लिपि का मानकीकरण।</a>
+        <a href="upsc/p1-k-6.html" class="unit-link"><strong>vi.</strong> स्वतंत्रता आन्दोलन के दौरान राष्ट्र भाषा के रूप में हिन्दी का विकास।</a>
+        <a href="upsc/p1-k-7.html" class="unit-link"><strong>vii.</strong> भारतीय संघ की राजभाषा के रूप में हिन्दी का विकास।</a>
+        <a href="upsc/p1-k-8.html" class="unit-link"><strong>viii.</strong> हिन्दी भाषा का वैज्ञानिक और तकनीकी विकास।</a>
+        <a href="upsc/p1-k-9.html" class="unit-link"><strong>ix.</strong> हिन्दी की प्रमुख बोलियाँ और उनका परस्पर संबंध।</a>
+        <a href="upsc/p1-k-10.html" class="unit-link"><strong>x.</strong> नागरी लिपि की प्रमुख विशेषताएँ और उसके सुधार के प्रयास तथा मानक हिन्दी का स्वरूप।</a>
+        <a href="upsc/p1-k-11.html" class="unit-link"><strong>xi.</strong> मानक हिन्दी की व्याकरणिक संरचना।</a>
     </div>
 
     <div class="section-header">खंड : ‘ख’ (हिन्दी साहित्य का इतिहास)</div>
     <div class="unit-box">
-        <a href="upsc/p1-kh-1.html" class="unit-link"><span>1.</span> साहित्य इतिहास-लेखन और आदिकाल</a>
-        <a href="upsc/p1-kh-2.html" class="unit-link"><span>2.</span> भक्तिकाल और रीतिकाल की प्रवृत्तियाँ</a>
-        <a href="upsc/p1-kh-3.html" class="unit-link"><span>3.</span> आधुनिक काल: नवजागरण और कविता</a>
-        <a href="upsc/p1-kh-4.html" class="unit-link"><span>4.</span> कथा साहित्य (उपन्यास और कहानी)</a>
-        <a href="upsc/p1-kh-5.html" class="unit-link"><span>5.</span> नाटक, रंगमंच और आलोचना</a>
-        <a href="upsc/p1-kh-6.html" class="unit-link"><span>6.</span> गद्य की अन्य विधाएँ</a>
+        <a href="upsc/p1-kh-1.html" class="unit-link"><strong>i.</strong> हिन्दी साहित्य की प्रासंगिकता और महत्त्व तथा हिन्दी साहित्य के इतिहास-लेखन की परम्परा।</a>
+        
+        <a href="upsc/p1-kh-2.html" class="unit-link">
+            <strong>ii. हिन्दी साहित्य के इतिहास के निम्नलिखित चार कालों की साहित्यिक प्रवृत्तियाँ:</strong>
+            <span class="unit-subtext">
+                (क) आदिकालः सिद्ध, नाथ और रासो साहित्य। प्रमुख कविः चंदबरदाई, खुसरो, हेमचन्द्र, विद्यापति।<br>
+                (ख) भक्ति कालः संत काव्य धारा, सूफी काव्यधारा, कृष्ण भक्तिधारा और राम भक्तिधारा। प्रमुख कवि: कबीर, जायसी, सूर और तुलसी।<br>
+                (ग) रीतिकालः रीतिकाव्य, रीतिबद्ध काव्य, रीतिमुक्त काव्य प्रमुख कवि : केशव, बिहारी, पदमाकर और घनानंद।<br>
+                (घ) आधुनिक कालः (क) नवजागरण, गद्य का विकास, भारतेन्दु मंडल (ख) प्रमुख लेखक : भारतेन्दु, बाल कृष्ण भट्ट और प्रताप नारायण मिश्र।<br>
+                (ड.) आधुनिक हिन्दी कविता की मुख्य प्रवृत्तियाँ। छायावाद, प्रगतिवाद, प्रयोगवाद, नई कविता, नवगीत, समकालीन कविता और जनवादी कविता। प्रमुख कवि : मैथिलीशरण गुप्त, जयशंकर प्रसाद, सूर्यकान्त त्रिपाठी 'निराला', महादेवी वर्मा, रामधारी सिंह 'दिनकर', सच्चिदानंद हीरानंद वात्स्यायन 'अज्ञेय', गजानन माधव मुक्तिबोध, नागार्जुन।
+            </span>
+        </a>
+
+        <a href="upsc/p1-kh-3.html" class="unit-link">
+            <strong>iii. कथा साहित्यः</strong>
+            <span class="unit-subtext">
+                (क) उपन्यास और यथार्थवाद<br>
+                (ख) हिन्दी उपन्यासों का उद्भव और विकास<br>
+                (ग) प्रमुख उपन्यासकार : प्रेमचन्द, जैनेन्द्र, यशपाल, रेणु और भीष्म साहनी।<br>
+                (घ) हिन्दी कहानी का उद्भव और विकास।<br>
+                (ड़) प्रमुख कहानीकार : प्रेमचन्द, जयशंकर प्रसाद, सच्चिदानंद हीरानंद वात्स्यायन 'अज्ञेय', मोहन राकेश और कृष्णा सोबती।
+            </span>
+        </a>
+
+        <a href="upsc/p1-kh-4.html" class="unit-link">
+            <strong>iv. नाटक और रंगमंच :</strong>
+            <span class="unit-subtext">
+                (क) हिन्दी नाटक का उद्भव और विकास<br>
+                (ख) प्रमुख नाटककार : भारतेन्दु, जयशंकर प्रसाद, जगदीश चंद्र माथुर, रामकुमार वर्मा, मोहन राकेश।<br>
+                (ग) हिन्दी रंगमंच का विकास।
+            </span>
+        </a>
+
+        <a href="upsc/p1-kh-5.html" class="unit-link">
+            <strong>v. आलोचना :</strong>
+            <span class="unit-subtext">
+                (क) हिन्दी आलोचना का उद्भव और विकास सैद्धांतिक, व्यावहारिक, प्रगतिवादी, मनोविश्लेषणवादी आलोचना और नई समीक्षा。<br>
+                (ख) प्रमुख आलोचक - रामचन्द्र शुक्ल, हजारी प्रसाद द्विवेदी, रामविलास शर्मा और नगेन्द्र।
+            </span>
+        </a>
+
+        <a href="upsc/p1-kh-6.html" class="unit-link"><strong>vi.</strong> हिन्दी गद्य की अन्य विधाएँ: ललित निबंध, रेखाचित्र, संस्मरण, यात्रा वृत्तान्त।</a>
     </div>
 
-    <div class="paper-header">प्रश्नपत्र-2 (निर्धारित मूल पाठ्यपुस्तकें)</div>
+    <div class="paper-header">प्रश्नपत्र-2</div>
+    <p style="text-align: center; color: #555; margin-top: -10px; margin-bottom: 20px;">(इस प्रश्नपत्र में निर्धारित मूल पाठ्यपुस्तकों को पढ़ना अपेक्षित होगा और ऐसे प्रश्न पूछे जाएंगे जिनसे अभ्यर्थी की आलोचनात्मक क्षमता की परीक्षा हो सके।)</p>
 
     <div class="section-header">खंड : ‘क’ (पद्य साहित्य)</div>
     <div class="unit-box">
-        <a href="upsc/p2-k-1.html" class="unit-link"><span>1.</span> कबीर, सूरदास और तुलसीदास</a>
-        <a href="upsc/p2-k-2.html" class="unit-link"><span>2.</span> जायसी और बिहारी</a>
-        <a href="upsc/p2-k-3.html" class="unit-link"><span>3.</span> मैथिलीशरण गुप्त और प्रसाद (कामायनी)</a>
-        <a href="upsc/p2-k-4.html" class="unit-link"><span>4.</span> निराला, दिनकर, अज्ञेय और मुक्तिबोध</a>
-        <a href="upsc/p2-k-5.html" class="unit-link"><span>5.</span> नागार्जुन की कविताएँ</a>
+        <a href="upsc/p2-k-1.html" class="unit-link"><strong>i. कबीर :</strong> कबीर ग्रंथावली (आरंभिक 100 पद) सं. श्याम सुन्दर दास</a>
+        <a href="upsc/p2-k-2.html" class="unit-link"><strong>ii. सूरदास :</strong> भ्रमरगीत सार (आरंभिक 100 पद) सं. रामचंद्र शुक्ल</a>
+        <a href="upsc/p2-k-3.html" class="unit-link"><strong>iii. तुलसीदास :</strong> रामचरित मानस (सुंदर काण्ड), कवितावली (उत्तर काण्ड)</a>
+        <a href="upsc/p2-k-4.html" class="unit-link"><strong>iv. जायसी :</strong> पदमावत (सिंहलद्वीप खंड और नागमती वियोग खंड) सं. श्याम सुन्दर दास</a>
+        <a href="upsc/p2-k-5.html" class="unit-link"><strong>v. बिहारी :</strong> बिहारी रत्नाकर (आरंभिक 100 दोहे) सं. जगन्नाथ दास रत्नाकर</a>
+        <a href="upsc/p2-k-6.html" class="unit-link"><strong>vi. मैथिलीशरण गुप्त :</strong> भारत भारती</a>
+        <a href="upsc/p2-k-7.html" class="unit-link"><strong>vii. जयशंकर प्रसाद :</strong> कामायनी (चिंता और श्रद्धा सर्ग)</a>
+        <a href="upsc/p2-k-8.html" class="unit-link"><strong>viii. सूर्यकांत त्रिपाठी 'निराला' :</strong> राग-विराग (राम की शक्ति पूजा और कुकुरमुत्ता) सं. रामविलास शर्मा</a>
+        <a href="upsc/p2-k-9.html" class="unit-link"><strong>ix. रामधारी सिंह ‘दिनकर’ :</strong> कुरुक्षेत्र</a>
+        <a href="upsc/p2-k-10.html" class="unit-link"><strong>x. अज्ञेय :</strong> आंगन के पार द्वार (असाध्यवीणा)</a>
+        <a href="upsc/p2-k-11.html" class="unit-link"><strong>xi. मुक्ति बोध :</strong> ब्रह्मराक्षस</a>
+        <a href="upsc/p2-k-12.html" class="unit-link"><strong>xii. नागार्जुन :</strong> बादल को घिरते देखा है, अकाल और उसके बाद, हरिजन गाथा।</a>
     </div>
 
     <div class="section-header">खंड : ‘ख’ (गद्य साहित्य)</div>
     <div class="unit-box">
-        <a href="upsc/p2-kh-1.html" class="unit-link"><span>1.</span> नाटक: भारत दुर्दशा, आषाढ़ का एक दिन, स्कंदगुप्त</a>
-        <a href="upsc/p2-kh-2.html" class="unit-link"><span>2.</span> उपन्यास: गोदान, दिव्या, मैला आंचल, महाभोज</a>
-        <a href="upsc/p2-kh-3.html" class="unit-link"><span>3.</span> निबंध और आलोचना: चिंतामणि, निबंध निलय</a>
-        <a href="upsc/p2-kh-4.html" class="unit-link"><span>4.</span> कहानियाँ: एक दुनिया समानान्तर, प्रेमचंद</a>
+        <a href="upsc/p2-kh-1.html" class="unit-link"><strong>i. भारतेन्दु :</strong> भारत दुर्दशा</a>
+        <a href="upsc/p2-kh-2.html" class="unit-link"><strong>ii. मोहन राकेश :</strong> आषाढ़ का एक दिन</a>
+        <a href="upsc/p2-kh-3.html" class="unit-link"><strong>iii. रामचंद्र शुक्ल :</strong> चिंतामणि (भाग-1), (कविता क्या है, श्रद्धा-भक्ति)।</a>
+        <a href="upsc/p2-kh-4.html" class="unit-link"><strong>iv. निबंध निलय :</strong> संपादक: डॉ. सत्येन्द्र। बाल कृष्ण भट्ट, प्रेमचन्द, गुलाब राय, हजारीप्रसाद द्विवेदी, रामविलास शर्मा, अज्ञेय, कुबेरनाथ राय।</a>
+        <a href="upsc/p2-kh-5.html" class="unit-link"><strong>v. प्रेमचंद :</strong> गोदान, 'प्रेमचंद' की सर्वश्रेष्ठ कहानियाँ (संपादक : अमृत राय)</a>
+        <a href="upsc/p2-kh-6.html" class="unit-link"><strong>vi. प्रसाद :</strong> स्कंदगुप्त</a>
+        <a href="upsc/p2-kh-7.html" class="unit-link"><strong>vii. यशपाल :</strong> दिव्या</a>
+        <a href="upsc/p2-kh-8.html" class="unit-link"><strong>viii. फणीश्वरनाथ रेणु :</strong> मैला आंचल</a>
+        <a href="upsc/p2-kh-9.html" class="unit-link"><strong>ix. मन्नू भण्डारी :</strong> महाभोज</a>
+        <a href="upsc/p2-kh-10.html" class="unit-link"><strong>x. राजेन्द्र यादव (सं.) :</strong> एक दुनिया समानान्तर (सभी कहानियाँ)</a>
     </div>
 
     <a href="index.html" class="back-home">← मुख्य पृष्ठ पर वापस जाएँ</a>
