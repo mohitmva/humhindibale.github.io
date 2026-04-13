@@ -114,34 +114,119 @@
     <a href="patra.html" class="card"><h2>पत्र-साहित्य</h2></a>
 </div>
 
+<style>
+    /* फुटर को छोटा और सुंदर बनाने के लिए नया CSS */
+    footer { 
+        background: #1a1a1a; 
+        color: #f1f1f1; 
+        padding: 20px; 
+        margin-top: auto; 
+        border-top: 4px solid var(--accent); 
+    }
+    .footer-container {
+        max-width: 1160px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .footer-brand { 
+        display: flex; 
+        align-items: center; 
+        gap: 12px; 
+    }
+    .footer-profile { 
+        width: 50px; 
+        height: 50px; 
+        border-radius: 50%; 
+        border: 2px solid #555; 
+        object-fit: cover; 
+    }
+    .brand-text h2 { 
+        margin: 0; 
+        font-size: 1.2rem; 
+        color: white; 
+    }
+    .brand-text p { 
+        margin: 0; 
+        font-size: 0.85rem; 
+        color: #aaa; 
+    }
+    .footer-contact { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: flex-end; 
+        gap: 8px;
+    }
+    .footer-contact h3 { 
+        margin: 0; 
+        font-size: 1rem; 
+        color: #ddd; 
+    }
+    .social-links { 
+        display: flex; 
+        gap: 8px; 
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    .social-btn { 
+        padding: 6px 12px; 
+        border-radius: 4px; 
+        text-decoration: none; 
+        color: white; 
+        font-weight: bold; 
+        font-size: 0.8rem; 
+        transition: 0.2s;
+    }
+    .insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .x-twitter { background: #000; border: 1px solid #444; }
+    .facebook { background: #1877F2; }
+    .telegram { background: #0088cc; }
+    .gmail { background: #D44638; }
+    
+    .footer-bottom { 
+        width: 100%; 
+        text-align: center; 
+        margin-top: 15px; 
+        padding-top: 10px; 
+        border-top: 1px solid #333; 
+        font-size: 0.8rem; 
+        color: #777; 
+    }
+
+    @media (max-width: 768px) {
+        .footer-container { flex-direction: column; text-align: center; }
+        .footer-contact { align-items: center; }
+        .social-links { justify-content: center; }
+    }
+</style>
+
 <footer>
-    <div class="footer-content">
-        
+    <div class="footer-container">
         <div class="footer-brand">
             <img src="mohit.jpg" alt="Mohit Kumar Vinita" class="footer-profile">
             <div class="brand-text">
                 <h2>हम हिंदी वाले</h2>
-                <p>छात्र मोहित कुमार 'विनीता'</p>
+                <p>मोहित कुमार 'विनीता'</p>
             </div>
         </div>
 
         <div class="footer-contact">
-            <h3>📞 हमसे संपर्क करें (Contact Us)</h3>
+            <h3>Contact Us</h3>
             <div class="social-links">
-                <a href="https://instagram.com/diverse_human" target="_blank" class="social-btn insta">Instagram</a>
-                <a href="https://x.com/diverse_human" target="_blank" class="social-btn x-twitter">X (Twitter)</a>
-                <a href="https://www.facebook.com/mohityadav.rahulyadav/" target="_blank" class="social-btn facebook">Facebook</a>
-                <a href="https://t.me/diverse_human" target="_blank" class="social-btn telegram">Telegram</a>
-                <a href="mailto:mohitmva@gmail.com" class="social-btn gmail">Gmail</a>
+                <a href="https://instagram.com/diverse_human" target="_blank" class="social-btn insta">Insta</a>
+                <a href="https://x.com/diverse_human" target="_blank" class="social-btn x-twitter">X</a>
+                <a href="https://facebook.com/mohityadav.rahulyadav/" target="_blank" class="social-btn facebook">FB</a>
+                <a href="https://t.me/diverse_human" target="_blank" class="social-btn telegram">TG</a>
+                <a href="mailto:mohitmva@gmail.com" class="social-btn gmail">Mail</a>
             </div>
         </div>
 
+        <div class="footer-bottom">
+            <p>© 2026 हम हिंदी वाले</p>
+        </div>
     </div>
-    
-    <div class="footer-bottom">
-        <p>© 2026 हम हिंदी वाले | सर्वाधिकार सुरक्षित</p>
-    </div>
-</footer>
-
-</body>
-</html>
+                    </footer>
+                    
