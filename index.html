@@ -7,25 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
     <style>
         :root { --accent: #800000; --edu-blue: #1a237e; --bg: #fdfaf1; }
-        body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; text-align: center; color: #333; display: flex; flex-direction: column; min-height: 100vh; padding-bottom: 80px; /* फोटो के लिए जगह */ }
+        body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; text-align: center; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
         header { background: var(--accent); color: white; padding: 30px 20px; border-bottom: 5px solid #5a0000; }
         
-        /* कोने वाली फोटो का डिज़ाइन (PC के लिए) */
-        .corner-profile { 
-            position: fixed; 
-            bottom: 20px; 
-            right: 20px; 
-            width: 80px; 
-            height: 80px; 
-            border-radius: 50%; 
-            border: 4px solid white; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
-            object-fit: cover; 
-            z-index: 1000; /* सबसे ऊपर रखने के लिए */
-            transition: 0.3s ease-in-out;
-        }
-        .corner-profile:hover { transform: scale(1.1); rotate: 5deg; }
-
         .section-title { 
             background: #eee; padding: 10px; margin-top: 30px; 
             color: var(--accent); border-left: 10px solid var(--accent);
@@ -46,29 +30,51 @@
         .card:hover { transform: translateY(-5px); background: #fffcf5; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .edu-card { border-top: 4px solid var(--edu-blue); color: var(--edu-blue); }
 
-        footer { background: #222; color: white; padding: 30px 20px; margin-top: auto; position: relative; z-index: 10; }
-        .social-links { margin-top: 15px; }
+        /* फुटर और सोशल मीडिया लिंक्स का नया डिज़ाइन */
+        footer { background: #222; color: white; padding: 30px 20px; margin-top: auto; }
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .footer-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-profile { 
+            width: 80px; 
+            height: 80px; 
+            border-radius: 50%; 
+            border: 3px solid white; 
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
         .social-btn { 
-            display: inline-block; padding: 10px 25px; margin: 5px; 
-            border-radius: 30px; text-decoration: none; color: white; font-weight: bold; font-size: 0.9rem; transition: 0.3s;
+            padding: 10px 20px; border-radius: 30px; text-decoration: none; 
+            color: white; font-weight: bold; font-size: 0.95rem; transition: 0.3s;
         }
         .insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-        .x-twitter { background: #000000; border: 1px solid #444; }
+        .x-twitter { background: #000; border: 1px solid #444; }
+        .facebook { background: #1877F2; }
+        .telegram { background: #0088cc; }
+        
         .social-btn:hover { opacity: 0.8; transform: scale(1.05); }
+        .copyright-text { margin-top: 10px; font-size: 0.9rem; color: #bbb; }
 
         /* मोबाइल के लिए विशेष सुधार */
         @media (max-width: 600px) {
             .nav-container { grid-template-columns: repeat(2, 1fr); }
             .section-title { margin-left: 15px; margin-right: 15px; font-size: 1.1rem; }
-            body { padding-bottom: 60px; }
-            /* मोबाइल पर फोटो छोटी और कोने में सेट */
-            .corner-profile { 
-                width: 50px; 
-                height: 50px; 
-                bottom: 10px; 
-                right: 10px; 
-                border-width: 2px; 
-            }
+            .footer-top { flex-direction: column; gap: 15px; }
+            .footer-profile { width: 70px; height: 70px; }
         }
     </style>
 </head>
@@ -104,13 +110,19 @@
     <a href="patra.html" class="card"><h2>पत्र-साहित्य</h2></a>
 </div>
 
-<img src="mohit.jpg" alt="Mohit Kumar Vinita" class="corner-profile">
-
 <footer>
-    <p>© 2026 हम हिंदी वाले | छात्र मोहित कुमार 'विनीता'</p>
-    <div class="social-links">
-        <a href="https://instagram.com/diverse_human" target="_blank" class="social-btn insta">Instagram</a>
-        <a href="https://x.com/diverse_human" target="_blank" class="social-btn x-twitter">X (Twitter)</a>
+    <div class="footer-container">
+        <div class="footer-top">
+            <img src="mohit.jpg" alt="Mohit Kumar Vinita" class="footer-profile">
+            
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank" class="social-btn insta">Instagram</a>
+                <a href="https://x.com/diverse_human" target="_blank" class="social-btn x-twitter">X (Twitter)</a>
+                <a href="https://www.facebook.com/mohityadav.rahulyadav/" target="_blank" class="social-btn facebook">Facebook</a>
+                <a href="https://t.me/diverse_human" target="_blank" class="social-btn telegram">Telegram</a>
+            </div>
+        </div>
+        <p class="copyright-text">© 2026 हम हिंदी वाले | छात्र मोहित कुमार 'विनीता'</p>
     </div>
 </footer>
 
