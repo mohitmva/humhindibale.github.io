@@ -6,16 +6,25 @@
     <title>हम हिंदी वाले | साहित्य एवं शिक्षा</title>
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #800000; --edu-blue: #1a237e; --bg: #fdfaf1; }
+        :root { --accent: #800000; --edu-blue: #1a237e; --bg: #fdfaf1; --gold: #FFD700; }
         body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; text-align: center; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
         
-        header { background: var(--accent); color: white; padding: 30px 20px; border-bottom: 5px solid #5a0000; }
-        header h1 { margin: 0 0 10px 0; font-size: 2.2rem; }
-        header p { margin: 0; font-size: 1.1rem; opacity: 0.9; }
+        /* 'हम हिंदी वाले' बैनर डिज़ाइन */
+        .site-banner { 
+            background: linear-gradient(135deg, var(--accent) 0%, #5a0000 100%); 
+            color: var(--gold); 
+            padding: 25px 20px; 
+            border-bottom: 5px solid #5a0000; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .site-banner h1 { margin: 0 0 10px 0; font-size: 2.8rem; letter-spacing: 1px; }
+        .site-banner p { margin: 0; font-size: 1.2rem; opacity: 0.9; color: white; }
         
-        /* हेडिंग का नया डिज़ाइन (एकदम कोने में और फुल-विथ) */
         .section-title { 
-            background: #e9ecef; padding: 12px 20px; margin-top: 35px; margin-bottom: 5px; 
+            background: #eee; padding: 12px 20px; margin-top: 35px; margin-bottom: 5px; 
             color: var(--accent); border-left: 8px solid var(--accent);
             text-align: left; font-size: 1.4rem; font-weight: bold;
             width: 100%; max-width: 1160px; box-sizing: border-box;
@@ -35,7 +44,6 @@
         .card:hover { transform: translateY(-5px); background: #fffcf5; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .edu-card { border-top: 4px solid var(--edu-blue); color: var(--edu-blue); }
 
-        /* फुटर डिज़ाइन */
         footer { background: #1a1a1a; color: #f1f1f1; padding: 40px 20px 20px; margin-top: auto; border-top: 5px solid var(--accent); text-align: left; }
         .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; max-width: 1160px; margin: auto; gap: 30px; }
         
@@ -44,7 +52,7 @@
         .brand-text h2 { margin: 0 0 5px 0; color: white; font-size: 1.8rem; }
         .brand-text p { margin: 0; color: #aaa; font-size: 1rem; }
 
-        .footer-contact { background: #2a2a2a; padding: 25px; border-radius: 10px; border-left: 6px solid var(--accent); flex-grow: 1; max-width: 500px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .footer-contact { background: #2a2a2a; padding: 25px; border-radius: 10px; border-left: 6px solid var(--accent); flex-grow: 1; max-width: 600px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
         .footer-contact h3 { margin: 0 0 15px 0; color: white; font-size: 1.4rem; border-bottom: 1px solid #444; padding-bottom: 10px; }
         
         .social-links { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -57,14 +65,17 @@
         .x-twitter { background: #000; border: 1px solid #555; }
         .facebook { background: #1877F2; }
         .telegram { background: #0088cc; }
+        .gmail { background: #D44638; } /* Gmail का रंग */
+        
         .social-btn:hover { opacity: 0.8; transform: translateY(-3px); box-shadow: 0 5px 10px rgba(0,0,0,0.4); }
         
         .footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #333; font-size: 0.95rem; color: #888; }
 
-        /* मोबाइल के लिए विशेष सुधार */
         @media (max-width: 768px) {
+            .site-banner h1 { font-size: 2.2rem; }
+            .site-banner p { font-size: 1rem; }
             .nav-container { grid-template-columns: repeat(2, 1fr); padding: 15px; gap: 10px; }
-            .section-title { font-size: 1.2rem; padding: 12px 15px; margin-top: 25px; } /* हेडिंग कोने में सेट */
+            .section-title { font-size: 1.2rem; padding: 12px 15px; margin-top: 25px; }
             .footer-content { flex-direction: column; text-align: center; }
             .footer-brand { flex-direction: column; text-align: center; }
             .footer-contact { width: 100%; box-sizing: border-box; text-align: center; border-left: none; border-top: 6px solid var(--accent); }
@@ -76,10 +87,10 @@
 </head>
 <body>
 
-<header>
+<div class="site-banner">
     <h1>हम हिंदी वाले</h1>
     <p>छात्र मोहित कुमार 'विनीता' की साहित्यिक एवं शैक्षणिक पहल</p>
-</header>
+</div>
 
 <div class="section-title">📚 प्रतियोगी परीक्षा केंद्र (UPSC / UGC NET)</div>
 <div class="nav-container">
@@ -124,6 +135,7 @@
                 <a href="https://x.com/diverse_human" target="_blank" class="social-btn x-twitter">X (Twitter)</a>
                 <a href="https://www.facebook.com/mohityadav.rahulyadav/" target="_blank" class="social-btn facebook">Facebook</a>
                 <a href="https://t.me/diverse_human" target="_blank" class="social-btn telegram">Telegram</a>
+                <a href="mailto:mohitmva@gmail.com" class="social-btn gmail">Gmail</a>
             </div>
         </div>
 
