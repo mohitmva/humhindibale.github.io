@@ -7,38 +7,79 @@
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
     <style>
         :root { --accent: #800000; --bg: #fdfaf1; --blue: #1a237e; }
-        body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; padding: 15px; line-height: 1.6; }
+        body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; padding: 15px; line-height: 1.8; font-size: 18px; }
         .container { max-width: 950px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         
-        h1 { color: var(--accent); text-align: center; border-bottom: 3px double var(--accent); padding-bottom: 10px; margin-bottom: 30px; }
-        .paper-header { background: var(--blue); color: white; padding: 12px; border-radius: 5px; font-size: 1.6rem; margin: 30px 0 15px; text-align: center; font-weight: bold; }
+        h1 { color: var(--accent); text-align: center; border-bottom: 3px double var(--accent); padding-bottom: 10px; margin-bottom: 30px; font-size: 2.2rem; }
+        .paper-header { background: var(--blue); color: white; padding: 15px; border-radius: 5px; font-size: 1.8rem; margin: 30px 0 15px; text-align: center; font-weight: bold; }
         
         /* खंड स्टाइल */
         .section-header { 
-            background: #eee; padding: 12px 15px; margin: 20px 0 10px; 
-            border-left: 6px solid var(--accent); font-weight: bold; font-size: 1.3rem; color: #333;
+            background: #eee; padding: 15px; margin: 20px 0 10px; 
+            border-left: 6px solid var(--accent); font-weight: bold; font-size: 1.5rem; color: #333;
         }
 
         /* यूनिट और टॉपिक्स */
         .unit-box { border: 1px solid #ddd; border-radius: 5px; margin-bottom: 15px; background: #fffcf5; }
         .unit-link { 
-            display: block; padding: 15px; text-decoration: none; 
+            display: block; padding: 18px 15px; text-decoration: none; 
             color: #333; border-bottom: 1px solid #ddd; transition: 0.3s;
-            line-height: 1.5; font-size: 1.1rem;
+            line-height: 1.7; font-size: 1.3rem; 
         }
         .unit-link:last-child { border-bottom: none; }
         .unit-link:hover { background: #fdf5e6; color: var(--accent); padding-left: 20px; }
-        .unit-link strong { color: var(--accent); font-size: 1.15rem; }
-        .unit-subtext { display: block; margin-top: 5px; color: #555; font-size: 1rem; }
-
-        .back-home { display: block; text-align: center; margin-top: 40px; color: var(--accent); text-decoration: none; font-weight: bold; font-size: 1.2rem; }
+        .unit-link strong { color: var(--accent); font-size: 1.4rem; }
         
+        .unit-subtext { display: block; margin-top: 8px; color: #444; font-size: 1.2rem; line-height: 1.6; }
+        .instruction-text { text-align: center; color: #555; margin-top: -10px; margin-bottom: 20px; font-size: 1.2rem; font-weight: bold; }
+        .back-home { display: block; text-align: center; margin-top: 40px; color: var(--accent); text-decoration: none; font-weight: bold; font-size: 1.3rem; }
+        
+        /* न्यूज़लेटर बॉक्स का डिज़ाइन */
+        .newsletter-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            border-top: 5px solid var(--accent);
+            width: 280px;
+            z-index: 1000;
+        }
+        .newsletter-box h3 { margin: 0 0 10px; font-size: 1.3rem; color: var(--accent); }
+        .newsletter-box p { font-size: 1rem; color: #555; margin-bottom: 15px; line-height: 1.4; }
+        .newsletter-box input {
+            width: 100%; padding: 10px; margin-bottom: 10px;
+            border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; 
+            font-family: inherit; font-size: 1rem;
+        }
+        .newsletter-box button {
+            width: 100%; padding: 10px; background: var(--accent); color: white;
+            border: none; border-radius: 5px; cursor: pointer; font-weight: bold; 
+            font-family: inherit; font-size: 1.1rem; transition: 0.3s;
+        }
+        .newsletter-box button:hover { background: #5a0000; }
+
+        /* मोबाइल के लिए विशेष सुधार */
         @media (max-width: 600px) {
+            body { font-size: 16px; padding: 10px; }
             .container { padding: 15px; }
-            h1 { font-size: 1.5rem; }
-            .paper-header { font-size: 1.3rem; }
-            .unit-link { font-size: 1rem; }
-            .unit-subtext { font-size: 0.9rem; }
+            h1 { font-size: 1.8rem; }
+            .paper-header { font-size: 1.5rem; }
+            .section-header { font-size: 1.3rem; padding: 12px; }
+            .unit-link { font-size: 1.2rem; padding: 15px 12px; }
+            .unit-link strong { font-size: 1.25rem; }
+            .unit-subtext { font-size: 1.15rem; } 
+            .instruction-text { font-size: 1.1rem; }
+            
+            /* न्यूज़लेटर मोबाइल पर नीचे सेट हो जाएगा */
+            .newsletter-box {
+                position: static;
+                width: auto;
+                margin: 30px 0 10px 0;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
         }
     </style>
 </head>
@@ -71,10 +112,10 @@
         <a href="upsc/p1-kh-2.html" class="unit-link">
             <strong>ii. हिन्दी साहित्य के इतिहास के निम्नलिखित चार कालों की साहित्यिक प्रवृत्तियाँ:</strong>
             <span class="unit-subtext">
-                (क) आदिकालः सिद्ध, नाथ और रासो साहित्य। प्रमुख कविः चंदबरदाई, खुसरो, हेमचन्द्र, विद्यापति।<br>
-                (ख) भक्ति कालः संत काव्य धारा, सूफी काव्यधारा, कृष्ण भक्तिधारा और राम भक्तिधारा। प्रमुख कवि: कबीर, जायसी, सूर और तुलसी।<br>
-                (ग) रीतिकालः रीतिकाव्य, रीतिबद्ध काव्य, रीतिमुक्त काव्य प्रमुख कवि : केशव, बिहारी, पदमाकर और घनानंद।<br>
-                (घ) आधुनिक कालः (क) नवजागरण, गद्य का विकास, भारतेन्दु मंडल (ख) प्रमुख लेखक : भारतेन्दु, बाल कृष्ण भट्ट और प्रताप नारायण मिश्र।<br>
+                (क) आदिकालः सिद्ध, नाथ और रासो साहित्य। प्रमुख कविः चंदबरदाई, खुसरो, हेमचन्द्र, विद्यापति।<br><br>
+                (ख) भक्ति कालः संत काव्य धारा, सूफी काव्यधारा, कृष्ण भक्तिधारा और राम भक्तिधारा। प्रमुख कवि: कबीर, जायसी, सूर और तुलसी।<br><br>
+                (ग) रीतिकालः रीतिकाव्य, रीतिबद्ध काव्य, रीतिमुक्त काव्य प्रमुख कवि : केशव, बिहारी, पदमाकर और घनानंद।<br><br>
+                (घ) आधुनिक कालः (क) नवजागरण, गद्य का विकास, भारतेन्दु मंडल (ख) प्रमुख लेखक : भारतेन्दु, बाल कृष्ण भट्ट और प्रताप नारायण मिश्र।<br><br>
                 (ड.) आधुनिक हिन्दी कविता की मुख्य प्रवृत्तियाँ। छायावाद, प्रगतिवाद, प्रयोगवाद, नई कविता, नवगीत, समकालीन कविता और जनवादी कविता। प्रमुख कवि : मैथिलीशरण गुप्त, जयशंकर प्रसाद, सूर्यकान्त त्रिपाठी 'निराला', महादेवी वर्मा, रामधारी सिंह 'दिनकर', सच्चिदानंद हीरानंद वात्स्यायन 'अज्ञेय', गजानन माधव मुक्तिबोध, नागार्जुन।
             </span>
         </a>
@@ -111,7 +152,7 @@
     </div>
 
     <div class="paper-header">प्रश्नपत्र-2</div>
-    <p style="text-align: center; color: #555; margin-top: -10px; margin-bottom: 20px;">(इस प्रश्नपत्र में निर्धारित मूल पाठ्यपुस्तकों को पढ़ना अपेक्षित होगा और ऐसे प्रश्न पूछे जाएंगे जिनसे अभ्यर्थी की आलोचनात्मक क्षमता की परीक्षा हो सके।)</p>
+    <p class="instruction-text">(इस प्रश्नपत्र में निर्धारित मूल पाठ्यपुस्तकों को पढ़ना अपेक्षित होगा और ऐसे प्रश्न पूछे जाएंगे जिनसे अभ्यर्थी की आलोचनात्मक क्षमता की परीक्षा हो सके।)</p>
 
     <div class="section-header">खंड : ‘क’ (पद्य साहित्य)</div>
     <div class="unit-box">
@@ -124,7 +165,7 @@
         <a href="upsc/p2-k-7.html" class="unit-link"><strong>vii. जयशंकर प्रसाद :</strong> कामायनी (चिंता और श्रद्धा सर्ग)</a>
         <a href="upsc/p2-k-8.html" class="unit-link"><strong>viii. सूर्यकांत त्रिपाठी 'निराला' :</strong> राग-विराग (राम की शक्ति पूजा और कुकुरमुत्ता) सं. रामविलास शर्मा</a>
         <a href="upsc/p2-k-9.html" class="unit-link"><strong>ix. रामधारी सिंह ‘दिनकर’ :</strong> कुरुक्षेत्र</a>
-        <a href="upsc/p2-k-10.html" class="unit-link"><strong>x. अज्ञेय :</strong> आंगन के पार द्वार (असाध्यवीणा)</a>
+        <a href="upsc/p2-k-10.html" class="unit-link"><strong>x. අज्ञेय :</strong> आंगन के पार द्वार (असाध्यवीणा)</a>
         <a href="upsc/p2-k-11.html" class="unit-link"><strong>xi. मुक्ति बोध :</strong> ब्रह्मराक्षस</a>
         <a href="upsc/p2-k-12.html" class="unit-link"><strong>xii. नागार्जुन :</strong> बादल को घिरते देखा है, अकाल और उसके बाद, हरिजन गाथा।</a>
     </div>
@@ -141,6 +182,18 @@
         <a href="upsc/p2-kh-8.html" class="unit-link"><strong>viii. फणीश्वरनाथ रेणु :</strong> मैला आंचल</a>
         <a href="upsc/p2-kh-9.html" class="unit-link"><strong>ix. मन्नू भण्डारी :</strong> महाभोज</a>
         <a href="upsc/p2-kh-10.html" class="unit-link"><strong>x. राजेन्द्र यादव (सं.) :</strong> एक दुनिया समानान्तर (सभी कहानियाँ)</a>
+    </div>
+
+    <div class="newsletter-box">
+        <h3>📩 अपडेट्स पाएँ</h3>
+        <p>नए नोट्स की जानकारी सीधे अपने ईमेल पर प्राप्त करें।</p>
+        <form action="https://formsubmit.co/mohitmva@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://mohitmva.github.io/humhindibale.github.io/upsc-hindi.html">
+            <input type="hidden" name="_subject" value="New Website Subscriber!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="email" name="email" placeholder="अपना ईमेल दर्ज करें" required>
+            <button type="submit">Subscribe</button>
+        </form>
     </div>
 
     <a href="index.html" class="back-home">← मुख्य पृष्ठ पर वापस जाएँ</a>
