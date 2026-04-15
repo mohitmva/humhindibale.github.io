@@ -78,24 +78,25 @@
 
         /* ================= असली जादू: प्रिंट लेआउट ================= */
         @media print {
-            /* पुरानी हेडिंग (page-title, author-name) और फालतू बटन छिपाएं */
             .print-btn, .pyq-btn, .back-home, .site-banner, footer, .page-title, .author-name { display: none !important; }
             
             body { background: white !important; color: black !important; padding: 0; margin: 0; }
             .container { box-shadow: none !important; border: none !important; padding: 0 !important; max-width: 100%; }
             
-            /* प्रिंट हेडर दिखाएं */
+            /* सिर्फ बड़ा बैनर दिखेगा */
             .print-only-header {
                 display: block !important;
                 text-align: center;
                 margin-bottom: 20px;
-                border-bottom: 2px solid #000;
-                padding-bottom: 10px;
+                border-bottom: 3px solid #800000; /* बैनर के नीचे एक सुंदर लाल पट्टी */
+                padding-bottom: 15px;
             }
-            .print-only-header img.p-banner { width: 100%; max-height: 120px; object-fit: contain; }
-            .print-only-header .p-author { display: flex !important; align-items: center !important; justify-content: center !important; gap: 15px; margin-top: 10px; }
-            .print-only-header img.p-logo { width: 60px !important; height: 60px !important; border-radius: 50% !important; border: 2px solid #000 !important; }
-            .print-only-header h3 { margin: 0; font-size: 1.2rem; color: #000; }
+            .print-only-header img.p-banner { 
+                width: 100%; 
+                height: auto; 
+                max-height: 250px; /* बैनर का साइज़ बढ़ा दिया गया है */
+                object-fit: contain; 
+            }
 
             .poem-section { page-break-inside: avoid; border-bottom: 1px solid #ccc; padding-bottom: 20px; }
             .intro-box { border: 1px solid #000; background: transparent !important; margin-top: 15px; }
@@ -107,10 +108,6 @@
 
     <div class="print-only-header">
         <img src="../1000285153.png" class="p-banner" alt="हम हिंदी वाले">
-        <div class="p-author">
-            <img src="../mohit.jpg" class="p-logo" alt="Mohit Logo">
-            <h3>छात्र मोहित कुमार 'विनीता' | हम हिंदी वाले</h3>
-        </div>
     </div>
 
     <button class="print-btn" onclick="window.print()">
