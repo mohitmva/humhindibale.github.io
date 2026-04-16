@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>महाभोज - मन्नू भंडारी | UPSC हिंदी साहित्य</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #800000; --bg: #fdfaf1; --blue: #1a237e; }
+        body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; padding: 15px; line-height: 1.8; font-size: 18px; color: #333; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; }
+        
+        .page-title { color: var(--accent); text-align: center; border-bottom: 3px double var(--accent); padding-bottom: 10px; font-size: 2.5rem; margin-bottom: 5px; }
+        .author-name { text-align: center; font-size: 1.5rem; color: #555; margin-bottom: 40px; font-weight: bold; }
+        
+        .intro-box { background: #fffcf5; border: 1px solid #ddd; padding: 20px; margin-bottom: 25px; border-radius: 5px; font-size: 1.15rem; line-height: 1.6; border-left: 10px solid var(--accent); }
+        .intro-box strong { color: var(--accent); }
+
+        /* PDF खोलने वाला बटन */
+        .pdf-open-btn {
+            display: block;
+            width: fit-content;
+            margin: 30px auto;
+            padding: 15px 30px;
+            background: #2e7d32; /* हरा रंग PDF के लिए */
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            text-align: center;
+        }
+        .pdf-open-btn:hover { background: #1b5e20; transform: scale(1.05); }
+
+        /* प्रिंट बटन */
+        .print-btn {
+            position: fixed; bottom: 20px; left: 20px; 
+            background: #D44638; color: white; border: none;
+            padding: 12px 20px; border-radius: 30px;
+            font-size: 1rem; font-weight: bold; cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;
+        }
+        
+        .print-only-header { display: none; }
+
+        .back-home { display: block; text-align: center; margin-top: 40px; color: var(--accent); text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+        .disclaimer-link { text-align: center; margin-top: 20px; font-size: 0.9rem; }
+        .disclaimer-link a { color: #888; text-decoration: none; }
+
+        @media print {
+            .print-btn, .pdf-open-btn, .back-home, .page-title, .author-name, .disclaimer-link { display: none !important; }
+            body { background: white !important; color: black !important; padding: 0; }
+            .container { box-shadow: none !important; border: none !important; padding: 0 !important; max-width: 100%; }
+            .print-only-header {
+                display: block !important;
+                text-align: center;
+                margin-bottom: 20px;
+                border-bottom: 3px solid #800000; 
+                padding-bottom: 15px;
+            }
+            .print-only-header img { width: 100%; height: auto; max-height: 250px; object-fit: contain; }
+            .intro-box { border: 1px solid #000; background: transparent !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="print-only-header">
+        <img src="../1000285153.png" alt="बैनर">
+    </div>
+
+    <button class="print-btn" onclick="window.print()">🖨️ प्रिंट या PDF डाउनलोड</button>
+
+<div class="container">
+    <h1 class="page-title">महाभोज (उपन्यास)</h1>
+    <div class="author-name">~ मन्नू भंडारी</div>
+
+    <div class="intro-box">
+        <strong>उपन्यास का परिचय:</strong><br>
+        'महाभोज' मन्नू भंडारी द्वारा रचित एक सशक्त राजनीतिक उपन्यास है, जिसका प्रकाशन 1979 में हुआ था। यह उपन्यास सत्ता, तंत्र और राजनीति के उस घिनौने चेहरे को उजागर करता है जहाँ जनसामान्य की नियति केवल एक मोहरा बनकर रह जाती है। इसमें सरोहा गाँव की पृष्ठभूमि में बििसू की हत्या और उस पर होने वाली गंदी राजनीति का जीवंत चित्रण है।
+    </div>
+
+    <a href="../Mahabhoj.pdf" target="_blank" class="pdf-open-btn">
+        📖 पूरा उपन्यास (PDF) पढ़ने के लिए यहाँ क्लिक करें
+    </a>
+
+    <div style="font-size: 1.1rem; color: #555; text-align: justify; margin-top: 20px;">
+        <p><strong>विशेष तथ्य:</strong> यह उपन्यास राजनीति और अपराध के गठबंधन की एक दारुण कथा है। इसमें दिखाया गया है कि कैसे परिवर्तन की आवाज़ उठाने वालों को कुचल दिया जाता है।</p>
+    </div>
+
+    <a href="../upsc-hindi.html" class="back-home">← वापस पाठ्यक्रम पर जाएँ</a>
+    
+    <div class="disclaimer-link">
+        <a href="../disclaimer.html">कॉपीराइट एवं अस्वीकरण</a>
+    </div>
+</div>
+
+</body>
+</html>
