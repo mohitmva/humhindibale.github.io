@@ -20,9 +20,9 @@
         .pdf-open-btn {
             display: block;
             width: fit-content;
-            margin: 30px auto;
+            margin: 20px auto;
             padding: 15px 30px;
-            background: #2e7d32; /* हरा रंग PDF के लिए */
+            background: #2e7d32; 
             color: white;
             text-decoration: none;
             border-radius: 50px;
@@ -33,6 +33,24 @@
             text-align: center;
         }
         .pdf-open-btn:hover { background: #1b5e20; transform: scale(1.05); }
+
+        /* विगत वर्षों के प्रश्नों वाली लिंक का डिज़ाइन */
+        .pyq-btn {
+            display: block;
+            width: fit-content;
+            margin: 20px auto 30px auto;
+            padding: 12px 25px;
+            background: var(--blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .pyq-btn:hover { background: #11185b; transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
 
         /* प्रिंट बटन */
         .print-btn {
@@ -50,7 +68,7 @@
         .disclaimer-link a { color: #888; text-decoration: none; }
 
         @media print {
-            .print-btn, .pdf-open-btn, .back-home, .page-title, .author-name, .disclaimer-link { display: none !important; }
+            .print-btn, .pdf-open-btn, .pyq-btn, .back-home, .page-title, .author-name, .disclaimer-link { display: none !important; }
             body { background: white !important; color: black !important; padding: 0; }
             .container { box-shadow: none !important; border: none !important; padding: 0 !important; max-width: 100%; }
             .print-only-header {
@@ -62,6 +80,11 @@
             }
             .print-only-header img { width: 100%; height: auto; max-height: 250px; object-fit: contain; }
             .intro-box { border: 1px solid #000; background: transparent !important; }
+        }
+        
+        @media (max-width: 600px) {
+            .pdf-open-btn { font-size: 1.1rem; padding: 12px 20px; width: 90%; box-sizing: border-box; }
+            .pyq-btn { font-size: 1rem; padding: 10px 15px; width: 90%; box-sizing: border-box; }
         }
     </style>
 </head>
@@ -84,6 +107,10 @@
 
     <a href="../Mahabhoj.pdf" target="_blank" class="pdf-open-btn">
         📖 पूरा उपन्यास (PDF) पढ़ने के लिए यहाँ क्लिक करें
+    </a>
+
+    <a href="#" class="pyq-btn">
+        👉 'महाभोज' के विगत वर्षों के प्रश्नों के लिए यहाँ क्लिक करें
     </a>
 
     <div style="font-size: 1.1rem; color: #555; text-align: justify; margin-top: 20px;">
