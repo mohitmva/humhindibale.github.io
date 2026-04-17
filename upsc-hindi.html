@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
     <style>
         :root { --accent: #800000; --bg: #fdfaf1; --blue: #1a237e; }
-        body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; padding: 15px; line-height: 1.8; font-size: 18px; }
-        .container { max-width: 950px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        body { font-family: 'Tiro Devanagari Hindi', serif; background: var(--bg); margin: 0; padding: 15px; line-height: 1.8; font-size: 18px; color: #333; }
+        .container { max-width: 950px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; }
         
         h1 { color: var(--accent); text-align: center; border-bottom: 3px double var(--accent); padding-bottom: 10px; margin-bottom: 30px; font-size: 2.2rem; }
         .paper-header { background: var(--blue); color: white; padding: 15px; border-radius: 5px; font-size: 1.8rem; margin: 30px 0 15px; text-align: center; font-weight: bold; }
@@ -34,7 +34,35 @@
         .instruction-text { text-align: center; color: #555; margin-top: -10px; margin-bottom: 20px; font-size: 1.2rem; font-weight: bold; }
         .back-home { display: block; text-align: center; margin-top: 40px; color: var(--accent); text-decoration: none; font-weight: bold; font-size: 1.3rem; }
         
-        /* मोबाइल के लिए विशेष सुधार */
+        /* ================= प्रिंट बटन का डिज़ाइन ================= */
+        .print-btn {
+            position: fixed; bottom: 20px; left: 20px; 
+            background: #D44638; color: white; border: none;
+            padding: 12px 20px; border-radius: 30px;
+            font-size: 1rem; font-weight: bold; cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;
+        }
+        
+        .print-only-header { display: none; }
+
+        /* ================= प्रिंट लेआउट (केवल बैनर) ================= */
+        @media print {
+            .print-btn, .back-home, .instruction-text, h1, .paper-header, .section-header, .back-home, .disclaimer-link { display: none !important; }
+            body { background: white !important; color: black !important; padding: 0; margin: 0; }
+            .container { box-shadow: none !important; border: none !important; padding: 0 !important; max-width: 100%; }
+            
+            .print-only-header {
+                display: block !important;
+                text-align: center;
+                margin-bottom: 20px;
+                border-bottom: 3px solid #800000; 
+                padding-bottom: 15px;
+            }
+            .print-only-header img { width: 100%; height: auto; max-height: 250px; object-fit: contain; }
+            .unit-link { color: black !important; border: 1px solid #ccc !important; page-break-inside: avoid; }
+            .unit-link strong { color: black !important; }
+        }
+
         @media (max-width: 600px) {
             body { font-size: 16px; padding: 10px; }
             .container { padding: 15px; }
@@ -45,10 +73,17 @@
             .unit-link strong { font-size: 1.25rem; }
             .unit-subtext { font-size: 1.15rem; } 
             .instruction-text { font-size: 1.1rem; }
+            .print-btn { font-size: 0.85rem; padding: 10px 15px; }
         }
     </style>
 </head>
 <body>
+
+    <div class="print-only-header">
+        <img src="1000285153.png" alt="बैनर">
+    </div>
+
+    <button class="print-btn" onclick="window.print()">🖨️ सिलेबस प्रिंट करें</button>
 
 <div class="container">
     <h1>UPSC हिंदी साहित्य (वैकल्पिक विषय) पाठ्यक्रम</h1>
@@ -141,7 +176,7 @@
         <a href="upsc/p2-kh-2.html" class="unit-link"><strong>ii. मोहन राकेश :</strong> आषाढ़ का एक दिन</a>
         <a href="upsc/p2-kh-3.html" class="unit-link"><strong>iii. रामचंद्र शुक्ल :</strong> चिंतामणि (भाग-1), (कविता क्या है, श्रद्धा-भक्ति)।</a>
         <a href="upsc/p2-kh-4.html" class="unit-link"><strong>iv. निबंध निलय :</strong> संपादक: डॉ. सत्येन्द्र। बाल कृष्ण भट्ट, प्रेमचन्द, गुलाब राय, हजारीप्रसाद द्विवेदी, रामविलास शर्मा, अज्ञेय, कुबेरनाथ राय।</a>
-        <a href="upsc/p2-kh-5.html" class="unit-link"><strong>v. प्रेमचंद :</strong> गोदान, 'प्रेमचंद' की सर्वश्रेष्ठ कहानियाँ (संपादक : अमृत राय)</a>
+        <a href="upsc/p2-kh-5.html" class="unit-link"><strong>v.</strong> प्रेमचंद : गोदान, 'प्रेमचंद' की सर्वश्रेष्ठ कहानियाँ (संपादक : अमृत राय)</a>
         <a href="upsc/p2-kh-6.html" class="unit-link"><strong>vi. प्रसाद :</strong> स्कंदगुप्त</a>
         <a href="upsc/p2-kh-7.html" class="unit-link"><strong>vii. यशपाल :</strong> दिव्या</a>
         <a href="upsc/p2-kh-8.html" class="unit-link"><strong>viii. फणीश्वरनाथ रेणु :</strong> मैला आंचल</a>
@@ -150,6 +185,10 @@
     </div>
 
     <a href="index.html" class="back-home">← मुख्य पृष्ठ पर वापस जाएँ</a>
+
+    <div class="disclaimer-link" style="text-align: center; margin-top: 30px; font-size: 0.9rem;">
+        <a href="disclaimer.html" style="color: #888; text-decoration: none;">कॉपीराइट एवं अस्वीकरण</a>
+    </div>
 </div>
 
 </body>
