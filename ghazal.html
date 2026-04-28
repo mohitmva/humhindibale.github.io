@@ -3,77 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ग़ज़ल संग्रह - हम हिंदी वाले</title>
+    <title>ग़ज़लकार - हम हिंदी वाले</title>
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
-    
     <style>
-        :root { --main-red: #800000; --paper-bg: #fdfaf1; --text-color: #2c2c2c; }
-        body { font-family: 'Tiro Devanagari Hindi', serif; background-color: var(--paper-bg); color: var(--text-color); margin: 0; line-height: 1.8; }
-        header { background: var(--main-red); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid #5a0000; }
+        :root { --accent: #800000; --bg: #fdfaf1; }
+        body { font-family: 'Tiro Devanagari Hindi', serif; background-color: var(--bg); margin: 0; padding: 0; color: #2c2c2c; }
         
-        .search-container { margin: -25px auto 30px; text-align: center; }
-        #searchBar { width: 80%; max-width: 600px; padding: 15px; border-radius: 30px; border: 1px solid #ccc; box-shadow: 0 4px 10px rgba(0,0,0,0.1); font-size: 18px; outline: none; }
+        header { background: var(--accent); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid #5a0000; }
+        header h1 { margin: 0; font-size: 2.5rem; }
+
+        .poet-list { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .poet-card { 
+            background: white; margin-bottom: 15px; padding: 20px; 
+            border-left: 5px solid #ccc; display: flex; align-items: center; 
+            text-decoration: none; color: inherit; transition: 0.3s; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-radius: 5px;
+        }
+        .poet-card:hover { 
+            transform: translateX(10px); background: #fffcf5; 
+            border-left: 5px solid var(--accent); 
+        }
         
-        .content-list { max-width: 900px; margin: auto; padding: 20px; }
-        .item-card { background: white; margin-bottom: 15px; padding: 15px; border-left: 5px solid var(--main-red); display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: inherit; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-radius: 5px;}
-        .item-card:hover { transform: translateX(10px); background: #fffcf5; }
-        
-        .title { font-weight: bold; font-size: 1.3rem; color: var(--main-red); margin-bottom: 5px; }
-        .author { font-size: 1rem; color: #666; font-style: italic; }
-        
-        .btn-home { display: block; text-align: center; margin: 30px auto; width: 200px; padding: 10px 20px; background: var(--main-red); color: white; text-decoration: none; border-radius: 5px; }
+        .poet-card img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 20px; border: 2px solid #eee; }
+        .poet-info .name { font-weight: bold; font-size: 1.4rem; color: var(--accent); }
+        .poet-info .qual { font-size: 0.9rem; color: #666; font-style: italic; }
+
+        .btn-home { display: block; text-align: center; margin: 40px auto; width: 180px; padding: 10px 20px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>ग़ज़ल संग्रह</h1>
-    <p>एहसासों और जज़्बातों का मुकम्मल जहाँ</p>
+    <h1>ग़ज़लकार</h1>
+    <p>एहसासों को शब्दों में पिरोने वाले कलमकार</p>
 </header>
 
-<div class="search-container">
-    <input type="text" id="searchBar" onkeyup="filterContent()" placeholder="ग़ज़ल का शीर्षक या शायर खोजें...">
-</div>
-
-<div class="content-list" id="ghazalList">
-    
-    <a href="ghazal/mohit-kumar-vinita/stri-hona-kathin-hai.html" class="item-card" data-title="स्त्री होना कठिन है दोस्त" data-author="मोहित कुमार विनीता">
-        <div>
-            <div class="title">स्त्री होना कठिन है दोस्त</div>
-            <div class="author">शायर: मोहित कुमार 'विनीता'</div>
+<div class="poet-list">
+    <a href="ghazal/mohit-kumar-vinita.html" class="poet-card">
+        <img src="mohit.jpg" alt="मोहित कुमार विनीता">
+        <div class="poet-info">
+            <div class="name">मोहित कुमार 'विनीता'</div>
+            <div class="qual">UGC NET, MA Hindi</div>
         </div>
-        <span style="font-size: 1.5rem;">📜</span>
+        <span style="margin-left:auto; color: #aaa;">👉</span>
     </a>
 
-    <a href="ghazal/mohit-kumar-vinita/tay-hua-tha.html" class="item-card" data-title="तय हुआ था न हम तुम मिलेंगे कभी" data-author="मोहित कुमार विनीता">
-        <div>
-            <div class="title">तय हुआ था न हम तुम मिलेंगे कभी</div>
-            <div class="author">शायर: मोहित कुमार 'विनीता'</div>
-        </div>
-        <span style="font-size: 1.5rem;">📜</span>
-    </a>
-
-</div>
+    </div>
 
 <a href="index.html" class="btn-home">वापस होम पर जाएँ</a>
-
-<script>
-    function filterContent() {
-        let input = document.getElementById('searchBar').value.toUpperCase();
-        let cards = document.getElementsByClassName('item-card');
-        
-        for (let i = 0; i < cards.length; i++) {
-            let title = cards[i].getAttribute('data-title').toUpperCase();
-            let author = cards[i].getAttribute('data-author').toUpperCase();
-            
-            if (title.includes(input) || author.includes(input)) {
-                cards[i].style.display = "";
-            } else {
-                cards[i].style.display = "none";
-            }
-        }
-    }
-</script>
 
 </body>
 </html>
