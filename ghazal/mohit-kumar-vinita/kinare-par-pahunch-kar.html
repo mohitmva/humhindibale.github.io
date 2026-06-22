@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>किनारे पर पहुँच कर डूबने का हाल हमसे पूछो - मोहित कुमार 'विनीता' | हम हिंदी वाले</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #800000; --bg: #fcf9f2; }
+        body { font-family: 'Tiro Devanagari Hindi', serif; background-color: var(--bg); margin: 0; padding: 20px; color: #333; line-height: 1.6; }
+        
+        /* शानदार विंटेज बॉर्डर और डिज़ाइन */
+        .ghazal-container { 
+            max-width: 750px; 
+            margin: 30px auto; 
+            background: #fffdf9; 
+            padding: 50px 40px; 
+            border-radius: 8px; 
+            border: 8px double var(--accent); 
+            box-shadow: inset 0 0 20px rgba(128,0,0,0.05), 0 10px 25px rgba(0,0,0,0.1); 
+            position: relative;
+        }
+        
+        /* PDF डाउनलोड बटन */
+        .pdf-btn {
+            display: flex; justify-content: center; align-items: center; gap: 8px;
+            background: var(--accent); color: white; border: none;
+            padding: 10px 25px; border-radius: 30px; font-size: 1rem; font-weight: bold;
+            margin: -20px auto 30px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: 0.3s; font-family: 'Tiro Devanagari Hindi', serif;
+        }
+        .pdf-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(128,0,0,0.25); }
+
+        .ghazal-header { text-align: left; border-bottom: 2px dashed #ead8d8; padding-bottom: 20px; margin-bottom: 30px; }
+        .ghazal-title { color: var(--accent); font-size: 2.2rem; margin: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.05);}
+        .urdu-title { font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.5rem; color: #555; margin: 10px 0 0 0; text-align: left; }
+        .author-name { font-size: 1.1rem; color: #666; margin-top: 15px; font-weight: bold;}
+
+        /* ग़ज़ल के टेक्स्ट का डिज़ाइन */
+        .ghazal-body { font-size: 1.4rem; color: #333; text-align: left;}
+        .couplet { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dashed #ead8d8;}
+        .couplet:last-child { border-bottom: none; }
+
+        sup { color: var(--accent); font-weight: bold; font-size: 0.75em; padding-left: 2px; }
+
+        /* शब्दार्थ सेक्शन */
+        .word-meanings { margin-top: 30px; padding: 20px; background: rgba(128,0,0,0.03); border-left: 4px solid var(--accent); font-size: 1rem; color: #444; border-radius: 4px; }
+        .word-meanings h5 { margin: 0 0 15px 0; color: var(--accent); font-size: 1.2rem; }
+        .word-meanings ol { padding-left: 20px; margin: 0; line-height: 1.8; }
+        .word-meanings li { margin-bottom: 8px; }
+        
+        /* संपर्क बॉक्स */
+        .contact-section { 
+            margin-top: 50px; border-top: 2px solid var(--accent); 
+            padding: 20px; background: rgba(255,255,255,0.8); border-radius: 0 0 5px 5px; 
+            text-align: left; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px;
+        }
+        .poet-meta { flex: 1; min-width: 250px;}
+        .poet-meta h4 { margin: 0; color: var(--accent); font-size: 1.3rem; }
+        
+        .contact-btns { display: flex; gap: 8px; flex-wrap: wrap;}
+        .c-btn { text-decoration: none; padding: 7px 15px; border-radius: 20px; color: white; font-weight: bold; font-size: 0.85rem;}
+        .insta-btn { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .mail-btn { background: #D44638; }
+
+        .back-home { display: block; text-align: center; margin: 30px auto 0; color: var(--accent); text-decoration: none; font-weight: bold; font-size: 1rem;}
+
+        /* प्रिंट और PDF के लिए सेटिंग */
+        .print-logo { display: none; }
+        @media print {
+            body { background: white; padding: 0; }
+            .ghazal-container { 
+                box-shadow: none; border: 4px double var(--accent); 
+                margin: 0; padding: 20px; 
+            }
+            .pdf-btn, .contact-section, .back-home { display: none !important; }
+            
+            .print-logo {
+                display: block !important;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                border: 2px solid var(--accent);
+                object-fit: cover;
+                opacity: 0.9;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .ghazal-container { padding: 30px 20px; border-width: 5px; }
+            .ghazal-title { font-size: 1.8rem; }
+            .urdu-title { font-size: 1.2rem; }
+            .ghazal-body { font-size: 1.25rem; }
+            .contact-section { text-align: center; justify-content: center; flex-direction: column;}
+        }
+    </style>
+</head>
+<body>
+
+<div class="ghazal-container">
+    
+    <button class="pdf-btn" onclick="window.print()">📥 PDF डाउनलोड करें</button>
+
+    <div class="ghazal-header">
+        <h1 class="ghazal-title">किनारे पर पहुँच कर डूबने का हाल हमसे पूछो</h1>
+        <div class="urdu-title">کنارے پر پہنچ کر ڈوبنے کا حال ہم سے پوچھو</div>
+        <div class="author-name">~ मोहित कुमार 'विनीता'</div>
+    </div>
+
+    <div class="ghazal-body">
+        <div class="couplet">किनारे पर पहुँच कर डूबने का हाल हमसे पूछो,<br>पिता की नम<sup>1</sup> निगाहों के सवाल हमसे पूछो।</div>
+        
+        <div class="couplet">किताबों में जलाई उम्र पर अब हाथ खाली हैं,<br>भटकती डिग्रियों का ये कठिन जंजाल<sup>2</sup> हमसे पूछो।</div>
+        
+        <div class="couplet">लबों पर जो सजी रहती है ये झूठी तसल्ली सी,<br>अकेले बंद कमरों का सघन<sup>3</sup> मलाल<sup>4</sup> हमसे पूछो।</div>
+        
+        <div class="couplet">दिए हैं रोज़ ही हमने नए वादे जो अपनों को,<br>उधारों में कटे कैसे हमारे साल हमसे पूछो।</div>
+        
+        <div class="couplet">कहाँ तक ज़ब्त<sup>5</sup> कर पाएगा 'मोहित' दर्द को अपने,<br>सिसकते हौसलों का आख़िरी ख़याल हमसे पूछो।</div>
+    </div>
+
+    <div class="word-meanings">
+        <h5>कठिन शब्दों के अर्थ:</h5>
+        <ol>
+            <li><strong>नम:</strong> गीली या आँसुओं से भरी (Moist)</li>
+            <li><strong>जंजाल:</strong> उलझन, मुसीबत या फंसाव का ताना-बाना</li>
+            <li><strong>सघन:</strong> गहरा, घना या बहुत अधिक</li>
+            <li><strong>मलाल:</strong> अफ़सोस, दुःख या पछतावा</li>
+            <li><strong>ज़ब्त:</strong> धैर्य, सहनशीलता या भावनाओं को रोकना</li>
+        </ol>
+    </div>
+
+    <img src="../../mohit.jpg" class="print-logo" alt="हम हिंदी वाले लोगो">
+
+    <div class="contact-section">
+        <div class="poet-meta">
+            <h4>मोहित कुमार 'विनीता'</h4>
+        </div>
+        <div class="contact-btns">
+            <a href="https://instagram.com/diverse_human" target="_blank" class="c-btn insta-btn">Insta</a>
+            <a href="mailto:mohitmva@gmail.com" class="c-btn mail-btn">Email</a>
+        </div>
+    </div>
+
+    <a href="../mohit-kumar-vinita.html" class="back-home">← वापस मोहित कुमार की ग़ज़लों पर जाएँ</a>
+</div>
+
+</body>
+</html>
