@@ -44,53 +44,51 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
         }
         .pyq-title { font-size: 1.8rem; color: #d32f2f; margin-bottom: 20px; border-bottom: 2px solid #ffcdd2; padding-bottom: 10px; }
-        .pyq-item { margin-bottom: 20px; font-size: 1.2rem; line-height: 1.6; }
-        .pyq-item strong { color: var(--blue); font-size: 1.3rem; }
-        .pyq-answer { color: #2e7d32; font-weight: bold; display: block; margin-top: 8px; background: #e8f5e9; padding: 10px; border-radius: 5px; border-left: 4px solid #4caf50;}
 
-        /* 📥 Print / Download Button CSS */
-        .pdf-download-box { 
-            text-align: center; margin: 50px 0; padding: 30px; 
-            background: #e8f0fe; border-radius: 10px; border: 2px dashed var(--blue); 
+        /* 🔴 Floating Print Button */
+        .floating-print-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Tiro Devanagari Hindi', serif;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 1000;
+            transition: 0.3s;
         }
-        .pdf-btn { 
-            display: inline-block; background-color: var(--accent); color: white; 
-            padding: 12px 30px; font-size: 1.4rem; border: none; cursor: pointer;
-            border-radius: 30px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.2); 
-            transition: all 0.3s ease-in-out; font-family: 'Tiro Devanagari Hindi', serif;
-        }
-        .pdf-btn:hover { background-color: var(--blue); transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.3); }
+        .floating-print-btn:hover { background-color: #b71c1c; transform: translateY(-2px); }
 
         .back-home { display: block; text-align: center; margin-top: 20px; color: var(--accent); text-decoration: none; font-weight: bold; font-size: 1.3rem; border-top: 1px solid #ddd; padding-top: 20px; }
         
-        /* 🖨️ PRINT SPECIFIC CSS (सिर्फ PDF/Print में दिखेगा) */
-        .print-banner { display: none; }
+        /* 🖨️ PRINT SPECIFIC CSS (सिर्फ PDF में दिखेगा) */
+        .print-banner-img { display: none; }
         
         @media print {
             body { background: white; padding: 0; margin: 0; }
             .container { box-shadow: none; padding: 0; margin: 0; max-width: 100%; border: none; }
             
-            /* वेबसाइट बैनर जो सिर्फ प्रिंट के फर्स्ट पेज पर दिखेगा */
-            .print-banner { 
-                display: block; 
-                text-align: center; 
-                font-size: 2.5rem; 
-                font-weight: bold; 
-                color: var(--accent); 
-                border-bottom: 4px solid var(--blue); 
-                padding-bottom: 15px; 
-                margin-bottom: 30px; 
+            /* ग्राफिक बैनर जो सिर्फ PDF के पहले पेज पर दिखेगा */
+            .print-banner-img { 
+                display: block !important; 
+                width: 100%; 
+                max-height: 200px; 
+                object-fit: cover; 
+                margin-bottom: 20px; 
             }
-            .print-banner span { font-size: 1.4rem; color: #555; display: block; margin-top: 8px; font-weight: normal; }
             
             /* प्रिंटिंग के दौरान बटन और लिंक्स को छुपाएं */
-            .pdf-download-box, .back-home { display: none !important; }
+            .floating-print-btn, .back-home { display: none !important; }
             
             /* पेज बीच से न कटे इसलिए पेज-ब्रेक सेटिंग्स */
             .poem-section { page-break-inside: avoid; }
             .pyq-section { page-break-inside: avoid; }
             
-            /* रंग और बैकग्राउंड प्रिंट में भी आएं */
             * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
 
@@ -102,18 +100,18 @@
             th, td { padding: 8px; }
             .poem-title { font-size: 1.7rem; }
             .poem-body { font-size: 1.25rem; padding: 15px 10px; border-left: none; }
-            .intro-box, .pyq-item { font-size: 1.1rem; }
-            .pdf-btn { font-size: 1.2rem; padding: 10px 20px; }
+            .intro-box { font-size: 1.1rem; }
+            .floating-print-btn { font-size: 0.9rem; padding: 10px 15px; bottom: 15px; left: 15px; }
         }
     </style>
 </head>
 <body>
 
-<!-- यह बैनर सिर्फ प्रिंट (PDF Save) करते समय सबसे ऊपर आएगा -->
-<div class="print-banner">
-    हम हिंदी वाले
-    <span>(UGC NET - हिंदी साहित्य अध्ययन सामग्री)</span>
-</div>
+<!-- यह बैनर इमेज सिर्फ प्रिंट (PDF) करते समय सबसे ऊपर आएगी -->
+<img src="../banner.jpg" class="print-banner-img" alt="हम हिंदी वाले बैनर">
+
+<!-- लाल रंग का तैरता हुआ बटन -->
+<button onclick="window.print()" class="floating-print-btn">🖨️ इस पेज को डाउनलोड या प्रिंट करें</button>
 
 <div class="container">
     <h1 class="page-title">नागार्जुन की कविताएँ (UGC NET)</h1>
@@ -376,21 +374,7 @@
     <!-- 📝 PYQ Section (Empty Framework) -->
     <div class="pyq-section">
         <h2 class="pyq-title">📝 विगत वर्षों के प्रश्न (UGC NET PYQs)</h2>
-        
-        <!-- यहाँ अपने PYQ जोड़ें, नीचे दिए गए फॉरमेट को कॉपी करके इस्तेमाल करें: -->
-        <!-- 
-        <div class="pyq-item">
-            <strong>प्रश्न 1:</strong> यहाँ अपना प्रश्न लिखें...
-            <span class="pyq-answer">उत्तर: यहाँ अपना उत्तर लिखें...</span>
-        </div> 
-        -->
-        
-    </div>
-
-    <!-- 📥 Print / Save PDF Section -->
-    <div class="pdf-download-box">
-        <h3 style="color: var(--blue); margin-top: 0;">अध्ययन के लिए सामग्री को सहेजें 👇</h3>
-        <button onclick="window.print()" class="pdf-btn">🖨️ / 📥 PDF के रूप में सेव या प्रिंट करें</button>
+        <!-- यहाँ अपने प्रश्न जोड़ सकते हैं -->
     </div>
 
     <a href="../ugc-net.html" class="back-home">← पाठ्यक्रम पृष्ठ पर वापस जाएँ</a>
